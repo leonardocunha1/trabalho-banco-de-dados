@@ -295,4 +295,18 @@ ORDER BY c.Nome_Cliente, p.Data_Pedido;
 UPDATE Cliente
 SET Nome_Cliente = 'José Silva'
 WHERE ID_Cliente = 1;
+
 SELECT Nome_Cliente FROM Cliente;
+
+/* DELETE */
+ALTER TABLE Telefone_Cliente
+DROP FOREIGN KEY telefone_cliente_ibfk_1;
+
+ALTER TABLE Telefone_Cliente
+ADD CONSTRAINT telefone_cliente_ibfk_1 FOREIGN KEY (fk_ID_Cliente) REFERENCES Cliente(ID_Cliente) ON DELETE CASCADE;
+
+/* Antes de executar o código abaixo, eu tive problemas pois a linha a ser apagada ainda tinha referências secundárias em outras tabelas, então eu corrigi desta forma: */
+
+DELETE FROM Cliente
+WHERE ID_Cliente = 1;
+SELECT * FROM Cliente;
