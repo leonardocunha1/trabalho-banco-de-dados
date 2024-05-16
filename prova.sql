@@ -277,8 +277,12 @@ VALUES
 
 /* READ */
 SELECT Nome_Cliente, Cidade, Estado FROM Cliente;
+SELECT * FROM Cliente;
 SELECT * FROM Telefone_Cliente;
+SELECT * FROM Produto;
 SELECT * FROM Pedido;
+SELECT * FROM Item_Pedido;
+SELECT * FROM Pagamento;
 
 /* Consulta de Clientes com Telefone */
 SELECT c.Nome_Cliente, c.CPF, c.Email, tc.Telefone
