@@ -307,3 +307,39 @@ VALUES
 ('2024-05-15 17:30:00', 'Pix', 21),
 ('2024-05-15 17:45:00', 'Cartao', 22);
 ```
+
+## 6- CRUD (Create, Read, Update, Delete)
+
+### Create
+> [!NOTE]  
+> O Create já foi realizado na criação do banco, tabelas e inserção de dados
+
+### Read
+Consulta de Clientes com Telefone
+```sql
+SELECT c.Nome_Cliente, c.CPF, c.Email, tc.Telefone
+FROM Cliente c
+JOIN Telefone_Cliente tc ON c.ID_Cliente = tc.fk_ID_Cliente;
+```
+<img src="imagens/CRUD/Read/Read-1.png">
+
+Consulta de Pedidos por Cliente
+``` sql
+SELECT c.Nome_Cliente, p.ID_Pedido, p.Data_Pedido, p.Status
+FROM Cliente c
+JOIN Pedido p ON c.ID_Cliente = p.fk_ID_Cliente
+ORDER BY c.Nome_Cliente, p.Data_Pedido;
+```
+<img src="imagens/CRUD/Read/Read-2.png">
+
+### Update
+
+Alterou, ou seja, deu um update no nome do cliente com ID_Cliente igual a 1 para "José Silva". 
+```sql
+UPDATE Cliente
+SET Nome_Cliente = 'José Silva'
+WHERE ID_Cliente = 1;
+
+SELECT Nome_Cliente FROM Cliente;
+```
+<img src="imagens/CRUD/Read/Update-1.png">
