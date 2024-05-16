@@ -324,7 +324,10 @@ VALUES
 <img src="imagens/Insert/Insert-Produto.png">
 
 <p>Resultado da tabela Item_Pedido</p>
-O ID_ITEM começa a partir do 47 porque eu apaguei a tabela anterior e inserir uma nova. Para o ID começar a partir do 1, seria necessário settar novamente o ID da tabela Item_Pedido
+
+> [!WARNING]  
+> O ID_ITEM começa a partir do 47 porque eu apaguei a tabela anterior e inserir uma nova. Para o ID começar a partir do 1, seria necessário settar novamente o ID da tabela Item_Pedido.
+
 <img src="imagens/Insert/Insert-Item-Pedido.png">
 
 <p>Resultado da tabela Pagamento</p>
