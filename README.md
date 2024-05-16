@@ -307,3 +307,10 @@ VALUES
 ('2024-05-15 17:30:00', 'Pix', 21),
 ('2024-05-15 17:45:00', 'Cartao', 22);
 ```
+
+## CRUD (Create, Read, Update, Delete)
+> [!NOTE]  
+> O Create já foi realizado na criação do banco, tabelas e inserção de dados
+
+### Read
+
