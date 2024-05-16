@@ -275,7 +275,24 @@ VALUES
 
 /* CREATE - JÁ FOI REALIZADO NA CRIAÇÃO DO BANCO,TABELAS E INSERÇÃO DE DADOS */
 
-/* READ -- Consultando as tabelas */
+/* READ */
 SELECT Nome_Cliente, Cidade, Estado FROM Cliente;
 SELECT * FROM Telefone_Cliente;
 SELECT * FROM Pedido;
+
+/* Consulta de Clientes com Telefone */
+SELECT c.Nome_Cliente, c.CPF, c.Email, tc.Telefone
+FROM Cliente c
+JOIN Telefone_Cliente tc ON c.ID_Cliente = tc.fk_ID_Cliente;
+
+/* Consulta de Pedidos por Cliente */
+SELECT c.Nome_Cliente, p.ID_Pedido, p.Data_Pedido, p.Status
+FROM Cliente c
+JOIN Pedido p ON c.ID_Cliente = p.fk_ID_Cliente
+ORDER BY c.Nome_Cliente, p.Data_Pedido;
+
+/* UPDATE */
+UPDATE Cliente
+SET Nome_Cliente = 'José Silva'
+WHERE ID_Cliente = 1;
+SELECT Nome_Cliente FROM Cliente;
