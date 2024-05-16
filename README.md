@@ -1,25 +1,32 @@
-#  Bem vindo ao protótipo do B.D da Diiner's Burgers 🍔
+#  🔶 Modelagem do B.D da Diiner's Burgers❗ 🔶
 
 ## 1- Cenário Detalhado
 A Diiner's Burgers, empresa fictícia criada para realização do P.I da FATEC-Franca, deseja desenvolver um sistema de banco de dados para gerenciar suas operações de vendas realizadas pelo Web Site, incluindo o cadastro de clientes, produtos (hambúrgueres , acompanhamentos, bebidas e sobremesas), pedidos, entregas e pagamentos. Para isso, foi elaborado este banco de dados para atender a demanda e as necessidades do cliente.
 
 ## 2- Modelagem Conceitual ✏️
-A modelagem conceitual foi realizada no brModelo e atendeu os conceitos do MER e DER
+> [!NOTE]
+> A modelagem conceitual foi realizada no brModelo e atendeu os conceitos do MER e DER
+
 <img src="imagens/Modelos/Conceitual_Burger.png" align="center">
 
 ## 3- Modelagem Lógica 🧠
-A modelagem conceitual foi realizada no brModelo
+> [!NOTE]
+> A modelagem conceitual foi realizada no brModelo
 <img src="imagens/Modelos/Logico_Burger.png" align="center">
 
 ## 4- Modelagem Física 📃💻
+> [!IMPORTANT]
+> O SGBD escolhido foi o MySQL
 
-Criando e selecionando o banco de dados
+A modelagem física foi dividida em duas etapas:
+
+- Criando e selecionando o banco de dados
 ```sql
 CREATE DATABASE DB_BURGER;
 USE DB_BURGER;
 ```
 
-Criando as tabelas
+- Criando as tabelas
 ```sql
 CREATE TABLE Cliente (
     ID_Cliente INT PRIMARY KEY AUTO_INCREMENT,
@@ -104,7 +111,7 @@ END;
 //
 DELIMITER ;
 ```
-Resultado das tabelas antes da inserção das tuplas
+### Resultado das tabelas antes da inserção das tuplas
 <div style="display: flex; flex-direction: column; justify-content:center;">
 	<p>Tabela Cliente</p>
 	<img src="imagens/Tabelas-Logico/tabela-cliente.png">
@@ -122,7 +129,7 @@ Resultado das tabelas antes da inserção das tuplas
 <hr>
 
 ## 5- Inserção de Dados
-Na inserção de dados foi obedecido os requisitos propostos pela atividade. São eles:
+Na inserção de dados foram obedecidos os requisitos propostos pela atividade. São eles:
 - Inserir dados em todas as tabelas
 - Utilizar a linguagem SQL com o SGB de preferência que, nesse caso, foi o MySQL
 - Inserir ao menos 20 dados em cada tabela
