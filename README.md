@@ -4,9 +4,12 @@
 A Diiner's Burgers, empresa fictícia criada para realização do P.I da FATEC-Franca, deseja desenvolver um sistema de banco de dados para gerenciar suas operações de vendas realizadas pelo Web Site, incluindo o cadastro de clientes, produtos (hambúrgueres , acompanhamentos, bebidas e sobremesas), pedidos, entregas e pagamentos. Para isso, foi elaborado este banco de dados para atender a demanda e as necessidades do cliente.
 
 ## 2- Modelagem Conceitual
-Esta modelagem realizada atendendo os conceitos do MER e DER
+A modelagem conceitual foi realizada pelo brModelo e atendeu os conceitos do MER e DER
+<img src="imagens/Modelos/Conceitual_Burger.png" align="center">
 
 ## 3- Modelagem Lógica
+A modelagem conceitual foi realizada pelo brModelo
+<img src="imagens/Modelos/Logico_Burger.png" align="center">
 
 ## 4- Modelagem Física
 
@@ -101,3 +104,9 @@ END;
 //
 DELIMITER ;
 ```
+Resultado das tabelas antes da inserção das tuplas
+<img src="imagens/Tabelas-Logico/tabela-cliente.png">
+<img src="imagens/Tabelas-Logico/tabela-item-pedido.png">
+<img src="imagens/Tabelas-Logico/tabela-pedido.png">
+<img src="imagens/Tabelas-Logico/tabela-produto.png">
+<img src="imagens/Tabelas-Logico/tabela-telefone.png">
