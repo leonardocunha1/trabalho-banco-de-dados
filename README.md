@@ -310,22 +310,25 @@ VALUES
 
 ### Exibição das tabelas após os "Insert's"
 
-Resultado da tabela Cliente
-Importante mencionar que o ID 1 foi apagado como está constando logo a seguir na seção CRUD - Delete
-<img src="imagens/insert/Insert-Cliente.png">
+<p>Resultado da tabela Cliente</p>
 
-Resultado da tabela Telefone_Cliente
-<img src="imagens/insert/Insert-Telefone.png">
+> [!IMPORTANT]
+> Importante mencionar que o ID 1 foi apagado como está constando logo a seguir na seção 6- CRUD - Delete
 
-Resultado da tabela Produto
-<img src="imagens/insert/Insert-Produto.png">
+<img src="imagens/Insert/Insert-Cliente.png">
 
-Resultado da tabela Item_Pedido
+<p>Resultado da tabela Telefone_Cliente</p>
+<img src="imagens/Insert/Insert-Telefone.png">
+
+<p>Resultado da tabela Produto</p>
+<img src="imagens/Insert/Insert-Produto.png">
+
+<p>Resultado da tabela Item_Pedido</p>
 O ID_ITEM começa a partir do 47 porque eu apaguei a tabela anterior e inserir uma nova. Para o ID começar a partir do 1, seria necessário settar novamente o ID da tabela Item_Pedido
-<img src="imagens/insert/Insert-Item-Pedido.png">
+<img src="imagens/Insert/Insert-Item-Pedido.png">
 
-Resultado da tabela Pagamento
-<img src="imagens/insert/Insert-Pagamento.png">
+<p>Resultado da tabela Pagamento</p>
+<img src="imagens/Insert/Insert-Pagamento.png">
 
 ## 6- CRUD (Create, Read, Update, Delete)
 
