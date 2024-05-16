@@ -308,7 +308,7 @@ VALUES
 ('2024-05-15 17:45:00', 'Cartao', 22);
 ```
 
-### Exibição das tabelas após os "Insert's"
+### Exibição das tabelas após os "Inserts"
 
 <p>Resultado da tabela Cliente</p>
 
