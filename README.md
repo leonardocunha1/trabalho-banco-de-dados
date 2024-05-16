@@ -105,8 +105,15 @@ END;
 DELIMITER ;
 ```
 Resultado das tabelas antes da inserção das tuplas
-<img src="imagens/Tabelas-Logico/tabela-cliente.png">
-<img src="imagens/Tabelas-Logico/tabela-item-pedido.png">
-<img src="imagens/Tabelas-Logico/tabela-pedido.png">
-<img src="imagens/Tabelas-Logico/tabela-produto.png">
-<img src="imagens/Tabelas-Logico/tabela-telefone.png">
+<div style="display: flex; flex-direction: column; justify-content:center;">
+	<p>Tabela Cliente</p>
+	<img src="imagens/Tabelas-Logico/tabela-cliente.png">
+	<p>Tabela Telefone</p>
+	<img src="imagens/Tabelas-Logico/tabela-telefone.png">
+	<p>Tabela Produto</p>
+	<img src="imagens/Tabelas-Logico/tabela-produto.png">
+	<p>Tabela Pedido</p>
+	<img src="imagens/Tabelas-Logico/tabela-pedido.png">
+	<p>Tabela Item-Pedido</p>
+	<img src="imagens/Tabelas-Logico/tabela-item-pedido.png">
+</div>
