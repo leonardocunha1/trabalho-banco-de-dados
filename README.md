@@ -122,7 +122,12 @@ Resultado das tabelas antes da inserção das tuplas
 <hr>
 
 ## 5- Inserção de Dados
-```
+Na inserção de dados foi obedecido os requisitos propostos pela atividade. São eles:
+- Inserir dados em todas as tabelas
+- Utilizar a linguagem SQL com o SGB de preferência que, nesse caso, foi o MySQL
+- Inserir ao menos 20 dados em cada tabela
+  
+```sql
 /* Inserindo dados nas tabelas */
 
 INSERT INTO Cliente (Nome_Cliente, CPF, Email, Senha, Rua, Numero, Bairro, Cidade, Estado, CEP)
