@@ -97,6 +97,7 @@ DESC Telefone_Cliente;
 DESC Produto;
 DESC Pedido;
 DESC Item_Pedido;
+DESC Pagamento;
 
 /* Inserindo dados nas tabelas */
 
