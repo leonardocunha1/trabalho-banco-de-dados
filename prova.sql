@@ -303,14 +303,14 @@ WHERE ID_Cliente = 1;
 SELECT Nome_Cliente FROM Cliente;
 
 /* DELETE */
-ALTER TABLE Telefone_Cliente
-DROP FOREIGN KEY telefone_cliente_ibfk_1;
-
-ALTER TABLE Telefone_Cliente
-ADD CONSTRAINT telefone_cliente_ibfk_1 FOREIGN KEY (fk_ID_Cliente) REFERENCES Cliente(ID_Cliente) ON DELETE CASCADE;
-
-/* Antes de executar o código abaixo, eu tive problemas pois a linha a ser apagada ainda tinha referências secundárias em outras tabelas, então eu corrigi desta forma: */
-
 DELETE FROM Cliente
 WHERE ID_Cliente = 1;
 SELECT * FROM Cliente;
+
+/* Antes de executar o código acima, eu tive problemas pois a linha a ser apagada ainda tinha referências secundárias em outras tabelas, então eu corrigi desta forma: */
+ALTER TABLE Telefone_Cliente
+DROP FOREIGN KEY telefone_cliente_ibfk_1; /* Este comando remove a chave estrangeira chamada telefone_cliente_ibfk_1 da tabela Telefone_Cliente. . Aqui, ibfk provavelmente significa "InnoDB Foreign Key" e o número 1 indica que é a primeira chave estrangeira criada automaticamente para essa tabela. */
+
+ALTER TABLE Telefone_Cliente
+ADD CONSTRAINT telefone_cliente_ibfk_1 FOREIGN KEY (fk_ID_Cliente) REFERENCES Cliente(ID_Cliente) ON DELETE CASCADE; /* Este comando adiciona uma nova chave estrangeira à tabela Telefone_Cliente. A chave estrangeira (fk_ID_Cliente) faz referência à coluna ID_Cliente na tabela Cliente. A cláusula ON DELETE CASCADE especifica que, se uma linha na tabela Cliente for deletada, todas as linhas correspondentes na tabela Telefone_Cliente também serão deletadas automaticamente. */
+
