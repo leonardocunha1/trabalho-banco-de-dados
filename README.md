@@ -405,3 +405,69 @@ JOIN Pedido p ON c.ID_Cliente = p.fk_ID_Cliente
 GROUP BY c.Nome_Cliente
 ORDER BY Total_Pedidos DESC;
 ```
+
+```sql
+/* Pedidos com Pagamento */
+SELECT p.ID_Pedido, p.Data_Pedido, pa.Data_Pagamento, pa.Metodo
+FROM Pedido p
+JOIN Pagamento pa ON p.ID_Pedido = pa.fk_ID_Pedido
+ORDER BY p.Data_Pedido;
+```
+
+```sql
+/* Produtos mais Vendidos */
+SELECT pr.Nome, SUM(ip.Quantidade) AS Total_Vendido
+FROM Produto pr
+JOIN Item_Pedido ip ON pr.ID_Produto = ip.fk_ID_Produto
+GROUP BY pr.Nome
+ORDER BY Total_Vendido DESC;
+```
+
+```sql
+/* Pedidos Pendentes por Cliente */
+SELECT c.Nome_Cliente, COUNT(p.ID_Pedido) AS Pedidos_Pendentes
+FROM Cliente c
+JOIN Pedido p ON c.ID_Cliente = p.fk_ID_Cliente
+WHERE p.Status = 'Pendente'
+GROUP BY c.Nome_Cliente
+ORDER BY Pedidos_Pendentes DESC;
+```
+
+```sql
+/* Clientes sem Pedido */
+SELECT c.Nome_Cliente, c.Email
+FROM Cliente c
+LEFT JOIN Pedido p ON c.ID_Cliente = p.fk_ID_Cliente
+WHERE p.ID_Pedido IS NULL;
+```
+
+```sql
+/* Valor Total dos Pedidos por Cliente */
+SELECT c.Nome_Cliente, SUM(p.Total) AS Valor_Total_Pedidos
+FROM Cliente c
+JOIN Pedido p ON c.ID_Cliente = p.fk_ID_Cliente
+GROUP BY c.Nome_Cliente
+ORDER BY Valor_Total_Pedidos DESC;
+```
+
+```sql
+/* Produtos Vendidos em Cada Pedido */
+SELECT p.ID_Pedido, GROUP_CONCAT(pr.Nome) AS Produtos_Vendidos
+FROM Pedido p
+JOIN Item_Pedido ip ON p.ID_Pedido = ip.fk_ID_Pedido
+JOIN Produto pr ON ip.fk_ID_Produto = pr.ID_Produto
+GROUP BY p.ID_Pedido;
+```
+
+```sql
+/* Total de Pedidos por Status */
+SELECT Status, COUNT(ID_Pedido) AS Total_Pedidos
+FROM Pedido
+GROUP BY Status;
+```
+
+```sql
+/* Valor Médio dos Pedidos */
+SELECT ROUND(AVG(Total), 2) AS Valor_Medio_Pedido
+FROM Pedido;
+```
