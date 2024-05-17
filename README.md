@@ -395,7 +395,7 @@ JOIN Item_Pedido ip ON p.ID_Pedido = ip.fk_ID_Pedido
 JOIN Produto pr ON ip.fk_ID_Produto = pr.ID_Produto
 ORDER BY p.ID_Pedido;
 ```
-
+<img src="imagens/Relatorio/Relatorio-1.png">
 
 ```sql
 /* Total de Pedidos por Cliente */
@@ -405,6 +405,7 @@ JOIN Pedido p ON c.ID_Cliente = p.fk_ID_Cliente
 GROUP BY c.Nome_Cliente
 ORDER BY Total_Pedidos DESC;
 ```
+<img src="imagens/Relatorio/Relatorio-2.png">
 
 ```sql
 /* Pedidos com Pagamento */
@@ -413,6 +414,7 @@ FROM Pedido p
 JOIN Pagamento pa ON p.ID_Pedido = pa.fk_ID_Pedido
 ORDER BY p.Data_Pedido;
 ```
+<img src="imagens/Relatorio/Relatorio-3.png">
 
 ```sql
 /* Produtos mais Vendidos */
@@ -422,6 +424,7 @@ JOIN Item_Pedido ip ON pr.ID_Produto = ip.fk_ID_Produto
 GROUP BY pr.Nome
 ORDER BY Total_Vendido DESC;
 ```
+<img src="imagens/Relatorio/Relatorio-4.png">
 
 ```sql
 /* Pedidos Pendentes por Cliente */
@@ -432,6 +435,7 @@ WHERE p.Status = 'Pendente'
 GROUP BY c.Nome_Cliente
 ORDER BY Pedidos_Pendentes DESC;
 ```
+<img src="imagens/Relatorio/Relatorio-5.png">
 
 ```sql
 /* Clientes sem Pedido */
@@ -440,6 +444,7 @@ FROM Cliente c
 LEFT JOIN Pedido p ON c.ID_Cliente = p.fk_ID_Cliente
 WHERE p.ID_Pedido IS NULL;
 ```
+<img src="imagens/Relatorio/Relatorio-6.png">
 
 ```sql
 /* Valor Total dos Pedidos por Cliente */
@@ -449,6 +454,7 @@ JOIN Pedido p ON c.ID_Cliente = p.fk_ID_Cliente
 GROUP BY c.Nome_Cliente
 ORDER BY Valor_Total_Pedidos DESC;
 ```
+<img src="imagens/Relatorio/Relatorio-7.png">
 
 ```sql
 /* Produtos Vendidos em Cada Pedido */
@@ -458,6 +464,7 @@ JOIN Item_Pedido ip ON p.ID_Pedido = ip.fk_ID_Pedido
 JOIN Produto pr ON ip.fk_ID_Produto = pr.ID_Produto
 GROUP BY p.ID_Pedido;
 ```
+<img src="imagens/Relatorio/Relatorio-8.png">
 
 ```sql
 /* Total de Pedidos por Status */
@@ -465,9 +472,11 @@ SELECT Status, COUNT(ID_Pedido) AS Total_Pedidos
 FROM Pedido
 GROUP BY Status;
 ```
+<img src="imagens/Relatorio/Relatorio-9.png">
 
 ```sql
 /* Valor Médio dos Pedidos */
 SELECT ROUND(AVG(Total), 2) AS Valor_Medio_Pedido
 FROM Pedido;
 ```
+<img src="imagens/Relatorio/Relatorio-10.png">
