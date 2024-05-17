@@ -346,7 +346,7 @@ SELECT c.Nome_Cliente, c.CPF, c.Email, tc.Telefone
 FROM Cliente c
 JOIN Telefone_Cliente tc ON c.ID_Cliente = tc.fk_ID_Cliente;
 ```
-<img src="imagens/CRUD/Read/Read-1.png">
+<img src="imagens/CRUD/Read-1.png">
 
 Consulta de Pedidos por Cliente
 ``` sql
@@ -355,10 +355,9 @@ FROM Cliente c
 JOIN Pedido p ON c.ID_Cliente = p.fk_ID_Cliente
 ORDER BY c.Nome_Cliente, p.Data_Pedido;
 ```
-<img src="imagens/CRUD/Read/Read-2.png">
+<img src="imagens/CRUD/Read-2.png">
 
 ### Update
-
 Alterou, ou seja, deu um update no nome do cliente com ID_Cliente igual a 1 para "José Silva". 
 ```sql
 UPDATE Cliente
@@ -367,4 +366,22 @@ WHERE ID_Cliente = 1;
 
 SELECT Nome_Cliente FROM Cliente;
 ```
-<img src="imagens/CRUD/Read/Update-1.png">
+<img src="imagens/CRUD/Update-1.png">
+
+### Delete
+Deletou o cliente que tinha o ID = 1.
+``` sql
+/* DELETE */
+DELETE FROM Cliente
+WHERE ID_Cliente = 1;
+
+SELECT * FROM Cliente;
+
+/* Antes de executar o código acima, eu tive problemas pois a linha a ser apagada ainda tinha referências secundárias em outras tabelas, então eu corrigi desta forma: */
+ALTER TABLE Telefone_Cliente
+DROP FOREIGN KEY telefone_cliente_ibfk_1; /* Este comando remove a chave estrangeira chamada telefone_cliente_ibfk_1 da tabela Telefone_Cliente. . Aqui, ibfk provavelmente significa "InnoDB Foreign Key" e o número 1 indica que é a primeira chave estrangeira criada automaticamente para essa tabela. */
+
+ALTER TABLE Telefone_Cliente
+ADD CONSTRAINT telefone_cliente_ibfk_1 FOREIGN KEY (fk_ID_Cliente) REFERENCES Cliente(ID_Cliente) ON DELETE CASCADE; /* Este comando adiciona uma nova chave estrangeira à tabela Telefone_Cliente. A chave estrangeira (fk_ID_Cliente) faz referência à coluna ID_Cliente na tabela Cliente. A cláusula ON DELETE CASCADE especifica que, se uma linha na tabela Cliente for deletada, todas as linhas correspondentes na tabela Telefone_Cliente também serão deletadas automaticamente. */
+```
+<img src="imagens/CRUD/Delete-1.png">
