@@ -385,3 +385,23 @@ ALTER TABLE Telefone_Cliente
 ADD CONSTRAINT telefone_cliente_ibfk_1 FOREIGN KEY (fk_ID_Cliente) REFERENCES Cliente(ID_Cliente) ON DELETE CASCADE; /* Este comando adiciona uma nova chave estrangeira à tabela Telefone_Cliente. A chave estrangeira (fk_ID_Cliente) faz referência à coluna ID_Cliente na tabela Cliente. A cláusula ON DELETE CASCADE especifica que, se uma linha na tabela Cliente for deletada, todas as linhas correspondentes na tabela Telefone_Cliente também serão deletadas automaticamente. */
 ```
 <img src="imagens/CRUD/Delete-1.png">
+
+## Relatório
+```sql
+/* Itens do Pedido com Detalhes do Produto */
+SELECT p.ID_Pedido, ip.Quantidade, pr.Nome, pr.Preco
+FROM Pedido p
+JOIN Item_Pedido ip ON p.ID_Pedido = ip.fk_ID_Pedido
+JOIN Produto pr ON ip.fk_ID_Produto = pr.ID_Produto
+ORDER BY p.ID_Pedido;
+```
+
+
+```sql
+/* Total de Pedidos por Cliente */
+SELECT c.Nome_Cliente, COUNT(p.ID_Pedido) AS Total_Pedidos
+FROM Cliente c
+JOIN Pedido p ON c.ID_Cliente = p.fk_ID_Cliente
+GROUP BY c.Nome_Cliente
+ORDER BY Total_Pedidos DESC;
+```
